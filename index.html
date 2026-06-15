@@ -9,6 +9,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
     
     .fade-in {
       animation: fadeIn 1s ease forwards;
@@ -79,27 +89,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   transform: translateX(0);
 }
 
-  
-html{scroll-behavior:smooth;}
-img{max-width:100%;height:auto;}
-body{overflow-x:hidden;}
-
-</style>
+  </style>
 
 </head>
 
 <body class="bg-gray-950 text-white overflow-x-hidden">
 <nav class="fixed top-0 left-0 w-full bg-gray-950/80 backdrop-blur border-b border-gray-800 z-50">
 
-  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
 
     <!-- Logo -->
-    <h1 class="text-green-400 font-bold text-xl">
+    <h1 class="text-green-400 font-bold text-lg md:text-xl">
       DevPortfolio
     </h1>
 
-    <!-- Links -->
-    <ul class="hidden md:flex gap-8 text-gray-300">
+    <!-- Desktop Links -->
+    <ul class="hidden md:flex gap-6 lg:gap-8 text-gray-300 text-sm md:text-base">
 
       <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
       <li><a href="#projects" class="hover:text-green-400 transition">Projects</a></li>
@@ -108,9 +113,30 @@ body{overflow-x:hidden;}
 
     </ul>
 
-    <!-- Button -->
+    <!-- Hire Button (Desktop) -->
     <a href="#contact"
-       class="bg-green-600 px-4 py-2 rounded-lg hover:bg-green-500 transition">
+       class="hidden md:inline-block bg-green-600 px-4 py-2 rounded-lg hover:bg-green-500 transition text-sm md:text-base">
+      Hire Me
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="md:hidden text-green-400 text-2xl">
+      <i class="fas fa-bars"></i>
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+       class="hidden md:hidden flex flex-col gap-4 px-6 pb-4 text-gray-300 bg-gray-950">
+
+    <a href="#" class="hover:text-green-400">Home</a>
+    <a href="#projects" class="hover:text-green-400">Projects</a>
+    <a href="#skills" class="hover:text-green-400">Skills</a>
+    <a href="#contact" class="hover:text-green-400">Contact</a>
+
+    <a href="#contact"
+       class="mt-2 bg-green-600 px-4 py-2 rounded-lg text-center hover:bg-green-500">
       Hire Me
     </a>
 
@@ -118,7 +144,7 @@ body{overflow-x:hidden;}
 
 </nav>
 <!-- HERO -->
-<section class="min-h-screen flex items-center px-5 md:px-10 fade-in">
+<section class="min-h-screen flex items-center px-10 fade-in">
 
   <div class="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
 
@@ -175,361 +201,314 @@ body{overflow-x:hidden;}
   </div>
 
 </section>
-<section id="about" class="py-20 px-5 md:px-10 project-hidden from-left">
+<section id="about" class="py-16 md:py-20 px-4 md:px-10">
 
-  <h2 class="text-3xl font-bold text-center mb-12 text-green-400">
+  <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-green-400">
     About Me
   </h2>
 
-  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
 
-    <!-- LEFT TEXT -->
-    <div>
-
-      <p class="text-gray-400 leading-relaxed">
-        I am a passionate MERN Stack Developer with a strong foundation in building scalable and secure web applications.
-        I specialize in designing RESTful APIs, managing databases, and writing clean, efficient server-side code.
+    <div class="text-center md:text-left">
+      <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+        I am a passionate MERN Stack Developer focused on building scalable and secure applications.
       </p>
 
-      <p class="text-gray-400 mt-4">
-        I hold a degree in Computer Science and have been actively working on backend development for the past 1 year,
-        focusing on real-world projects and performance-driven systems.
+      <p class="text-gray-400 mt-4 text-sm md:text-base">
+        I work on backend systems, APIs, database design and AI-based solutions.
       </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 text-center">
+
+      <div class="bg-gray-900 p-4 md:p-6 rounded-xl hover:scale-105 transition">
+        <h3 class="text-green-400 font-bold text-sm md:text-base">Degree</h3>
+        <p class="text-gray-300 text-xs md:text-sm mt-2">BS CS</p>
+      </div>
+
+      <div class="bg-gray-900 p-4 md:p-6 rounded-xl hover:scale-105 transition">
+        <h3 class="text-green-400 font-bold text-sm md:text-base">Experience</h3>
+        <p class="text-gray-300 text-xs md:text-sm mt-2">1 Year</p>
+      </div>
+
+      <div class="bg-gray-900 p-4 md:p-6 rounded-xl hover:scale-105 transition">
+        <h3 class="text-green-400 font-bold text-sm md:text-base">Projects</h3>
+        <p class="text-gray-300 text-xs md:text-sm mt-2">10+</p>
+      </div>
+
+      <div class="bg-gray-900 p-4 md:p-6 rounded-xl hover:scale-105 transition">
+        <h3 class="text-green-400 font-bold text-sm md:text-base">Focus</h3>
+        <p class="text-gray-300 text-xs md:text-sm mt-2">MERN + AI</p>
+      </div>
 
     </div>
 
-    <!-- RIGHT STATS -->
-    <div class="grid grid-cols-2 gap-6 text-center">
+  </div>
+</section>
+<section id="projects" class="py-16 md:py-20 px-4 md:px-10">
 
-      <!-- DEGREE -->
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h3 class="text-xl font-bold text-green-400">Degree</h3>
-        <p class="text-gray-300 mt-2">BS Computer Science</p>
+  <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 md:mb-16 text-green-400">
+    My Projects
+  </h2>
+
+  <div class="max-w-6xl mx-auto space-y-16 md:space-y-20">
+
+    <!-- PROJECT 1 -->
+    <div class="project-hidden flex flex-col md:flex-row items-center gap-6 md:gap-10">
+
+      <div class="w-full md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg">
+        <img src="assets/images/Auth.png"
+             class="w-full h-52 sm:h-60 md:h-64 object-cover hover:scale-105 transition duration-300">
       </div>
 
-      <!-- EXPERIENCE -->
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h3 class="text-xl font-bold text-green-400">Experience</h3>
-        <p class="text-gray-300 mt-2">1 Year</p>
+      <div class="w-full md:w-1/2 text-center md:text-left">
+
+        <h3 class="text-xl md:text-2xl font-bold">Auth API System</h3>
+
+        <p class="text-gray-400 mt-3 text-sm md:text-base">
+          A secure backend authentication system built using modern security practices.
+        </p>
+
+        <ul class="mt-4 text-gray-300 text-sm space-y-2">
+          <li>✔ JWT Authentication</li>
+          <li>✔ Password Hashing</li>
+          <li>✔ Protected Routes</li>
+        </ul>
+
+        <p class="mt-4 text-xs md:text-sm text-green-400">
+          Node.js • Express • MySQL
+        </p>
+
+        <a href="https://github.com/Abcdali/Web-Backend"
+           target="_blank"
+           class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+          View Project
+        </a>
+
       </div>
 
-      <!-- PROJECTS -->
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h3 class="text-xl font-bold text-green-400">Projects</h3>
-        <p class="text-gray-300 mt-2">10+ Completed</p>
-      </div>
- 
-      <!-- SKILLS -->
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-        <h3 class="text-xl font-bold text-green-400">Focus</h3>
-        <p class="text-gray-300 mt-2">MERN Stack & AI Engineer</p>
+    </div>
+
+    <!-- PROJECT 2 (REVERSE) -->
+    <div class="project-hidden flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10">
+
+      <div class="w-full md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg">
+        <img src="assets/images/task.png"
+             class="w-full h-52 sm:h-60 md:h-64 object-cover hover:scale-105 transition duration-300">
       </div>
 
+      <div class="w-full md:w-1/2 text-center md:text-left">
+
+        <h3 class="text-xl md:text-2xl font-bold">SMAC APP</h3>
+
+        <p class="text-gray-400 mt-3 text-sm md:text-base">
+          Backend system for managing payment processing.
+        </p>
+
+        <ul class="mt-4 text-gray-300 text-sm space-y-2">
+          <li>✔ CRUD Operations</li>
+          <li>✔ User-based payment system</li>
+          <li>✔ Clean API design</li>
+        </ul>
+
+        <p class="mt-4 text-xs md:text-sm text-green-400">
+          Node.js • Express • SQL
+        </p>
+
+        <a href="https://github.com/Abcdali/smacapp"
+           target="_blank"
+           class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+          View Project
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-hidden flex flex-col md:flex-row items-center gap-6 md:gap-10">
+
+      <div class="w-full md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg">
+        <img src="assets/images/uni1.png"
+             class="w-full h-52 sm:h-60 md:h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+
+      <div class="w-full md:w-1/2 text-center md:text-left">
+
+        <h3 class="text-xl md:text-2xl font-bold">Uni Finder</h3>
+
+        <p class="text-gray-400 mt-3 text-sm md:text-base">
+          University management platform with hostel and document system.
+        </p>
+
+        <ul class="mt-4 text-gray-300 text-sm space-y-2">
+          <li>✔ Student Management</li>
+          <li>✔ Hostel Booking</li>
+          <li>✔ Document Handling</li>
+        </ul>
+
+        <p class="mt-4 text-xs md:text-sm text-green-400">
+          Node.js • Express • MySQL
+        </p>
+
+        <a href="https://github.com/Abcdali/uni-finder"
+           target="_blank"
+           class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+          View Project
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 4 (REVERSE) -->
+    <div class="project-hidden flex flex-col md:flex-row-reverse items-center gap-6 md:gap-10">
+
+      <div class="w-full md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg">
+        <img src="assets/images/pdf.png"
+             class="w-full h-52 sm:h-60 md:h-64 object-cover hover:scale-105 transition duration-300">
+      </div>
+
+      <div class="w-full md:w-1/2 text-center md:text-left">
+
+        <h3 class="text-xl md:text-2xl font-bold">PDF Chatbot</h3>
+
+        <p class="text-gray-400 mt-3 text-sm md:text-base">
+          AI chatbot that answers questions from PDF documents.
+        </p>
+
+        <ul class="mt-4 text-gray-300 text-sm space-y-2">
+          <li>✔ PDF Upload</li>
+          <li>✔ AI Q/A System</li>
+          <li>✔ Context-based answers</li>
+        </ul>
+
+        <p class="mt-4 text-xs md:text-sm text-green-400">
+          Python • AI • NLP
+        </p>
+
+        <a href="https://github.com/Abcdali/PDF-Chatbot"
+           target="_blank"
+           class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+          View Project
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="py-16 md:py-20 px-4 md:px-10 project-hidden from-right">
+
+  <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 md:mb-12 text-green-400">
+    Skills
+  </h2>
+
+  <div class="max-w-6xl mx-auto 
+              grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 
+              gap-4 md:gap-6">
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fab fa-node-js text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">Node.js</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-server text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">Express.js</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-database text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">MongoDB</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fab fa-react text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">React.js</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-layer-group text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">MERN Stack</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-robot text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">AI Agents</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-brain text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">Generative AI</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-book-open text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">RAG Systems</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-gears text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">Automation</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-plug text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">REST APIs</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-database text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">MySQL</h3>
+    </div>
+
+    <div class="bg-gray-900 p-4 md:p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-shield-halved text-3xl md:text-4xl text-green-400 mb-2 md:mb-3"></i>
+      <h3 class="text-sm md:text-base font-semibold">JWT Auth</h3>
     </div>
 
   </div>
 
 </section>
-<section id="projects" class="py-20 px-5 md:px-10">
+<section id="contact" class="py-16 px-4 md:px-10">
 
-  <h2 class="text-3xl font-bold text-center mb-16 text-green-400">
-    My Projects
+  <h2 class="text-2xl md:text-3xl font-bold text-center mb-10 text-green-400">
+    Contact Me
   </h2>
 
-  <!-- PROJECT ITEM -->
-  <div class="project-hidden flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto mb-20">
+  <div class="max-w-3xl mx-auto bg-gray-900 p-6 md:p-10 rounded-xl">
 
-    <!-- LEFT: IMAGE CARD -->
-    <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
-      <img src="assets/images/Auth.png" class="w-full h-52 md:h-64 object-cover">
-    </div>
+    <div class="space-y-5 text-center md:text-left text-sm md:text-base">
 
-    <!-- RIGHT: DETAILS -->
-    <div class="md:w-1/2">
+      <p><span class="text-green-400">Email:</span> example@gmail.com</p>
+      <p><span class="text-green-400">Phone:</span> +92 300 0000000</p>
+      <p><span class="text-green-400">Location:</span> Pakistan</p>
 
-      <h3 class="text-2xl font-bold">Auth API System</h3>
-
-      <p class="text-gray-400 mt-3">
-        A secure backend authentication system built using modern security practices.
-      </p>
-
-      <!-- FEATURES -->
-      <ul class="mt-4 text-gray-300 space-y-2">
-        <li>✔ JWT Authentication</li>
-        <li>✔ Password Hashing</li>
-        <li>✔ Protected Routes</li>
-      </ul>
-
-      <!-- TECH -->
-      <p class="mt-4 text-sm text-green-400">
-        Node.js • Express • MySQL
-      </p>
-
-      <!-- BUTTON -->
-     <a href="https://github.com/Abcdali/Web-Backend"
-   target="_blank"
-   class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
-   View Project
-   </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- SECOND PROJECT (REVERSE STYLE 🔥) -->
-  <div class="project-hidden flex flex-col md:flex-row-reverse items-center gap-10 max-w-6xl mx-auto">
-
-    <!-- IMAGE -->
-    <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
-      <img src="assets/images/task.png" class="w-full h-52 md:h-64 object-cover">
-    </div>
-
-    <!-- DETAILS -->
-    <div class="md:w-1/2">
-
-      <h3 class="text-2xl font-bold">SMAC APP</h3>
-
-      <p class="text-gray-400 mt-3">
-        Backend system for managing payment processing.
-      </p>
-
-      <ul class="mt-4 text-gray-300 space-y-2">
-        <li>✔ User-based payment</li>
-        <li>✔ CRUD operations</li>
-        <li>✔ Clean API design</li>
-      </ul>
-
-      <p class="mt-4 text-sm text-green-400">
-        Node.js • Express • SQL
-      </p>
-
-      <a href="https://github.com/Abcdali/smacapp"
+      <a href="https://github.com/Abcdali/"
       target="_blank"
-       class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
-        View Project
+       class="text-green-400 hover:underline block">
+        GitHub Profile
+      </a>
+
+      <a href="https://www.linkedin.com/in/ali-haider-6821253b0"
+         target="_blank"
+         class="text-green-400 hover:underline block">
+        LinkedIn Profile
       </a>
 
     </div>
 
-     </div>
-     
-    <div class="project-hidden flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto mb-20">
-
-  <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
-    <img src="assets/images/uni1.png" class="w-full h-52 md:h-64 object-cover">
   </div>
-
-  <div class="md:w-1/2">
-
-    <h3 class="text-2xl font-bold">Uni Finder</h3>
-
-    <p class="text-gray-400 mt-3">
-      A university management platform for students and administrators with program management, hostel booking, and document handling.
-    </p>
-
-    <ul class="mt-4 text-gray-300 space-y-2">
-      <li>✔ Student Management</li>
-      <li>✔ Hostel & Room Booking</li>
-      <li>✔ Document Management</li>
-    </ul>
-
-    <p class="mt-4 text-sm text-green-400">
-      Node.js • Express • MySQL
-    </p>
-
-    <a href="https://github.com/Abcdali/uni-finder"
-       target="_blank"
-       class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
-      View Project
-    </a>
-
-  </div>
-
-</div>
-<div class="project-hidden flex flex-col md:flex-row-reverse items-center gap-10 max-w-6xl mx-auto mb-20">
-
-  <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
-    <img src="assets/images/pdf.png" class="w-full h-52 md:h-64 object-cover">
-  </div>
-
-  <div class="md:w-1/2">
-
-    <h3 class="text-2xl font-bold">PDF Chatbot</h3>
-
-    <p class="text-gray-400 mt-3">
-      AI-powered chatbot that allows users to upload PDF documents and ask questions based on the document content.
-    </p>
-
-    <ul class="mt-4 text-gray-300 space-y-2">
-      <li>✔ PDF Upload</li>
-      <li>✔ AI Question Answering</li>
-      <li>✔ Context Based Responses</li>
-    </ul>
-
-    <p class="mt-4 text-sm text-green-400">
-      Python • AI • PDF Processing
-    </p>
-
-    <a href="https://github.com/Abcdali/PDF-Chatbot"
-       target="_blank"
-       class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
-      View Project
-    </a>
-
-  </div>
-  </div>
-
-  <section id="skills" class="py-20 px-5 md:px-10 project-hidden from-right">
-
-  <h2 class="text-3xl font-bold text-center mb-12 text-green-400">
-    Skills
-  </h2>
-
-  <div class="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fab fa-node-js text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">Node.js</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-server text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">Express.js</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-database text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">MongoDB</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fab fa-react text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">React.js</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-layer-group text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">MERN Stack</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-robot text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">AI Agents</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-brain text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">Generative AI</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-book-open text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">RAG Systems</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-gears text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">Automation</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-plug text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">REST APIs</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-database text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">MySQL</h3>
-    </div>
-
-    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
-      <i class="fas fa-shield-halved text-4xl text-green-400 mb-3"></i>
-      <h3 class="font-semibold">JWT Auth</h3>
-    </div>
-
-  </div>
-
 </section>
-<section id="contact" class="py-20 px-5 md:px-10 project-hidden from-left">
 
-  <h2 class="text-3xl font-bold text-center mb-12 text-green-400">
-    Contact Me
-  </h2>
-
-  <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-lg">
-
-    <p class="text-center text-gray-400 mb-8">
-      Interested in working together? Feel free to reach out.
-    </p>
-
-    <div class="space-y-6">
-
-      <div>
-        <h3 class="text-green-400 font-semibold">Email</h3>
-        <p class="text-gray-300">
-          haiderali380717@gmail.com
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-green-400 font-semibold">Phone</h3>
-        <p class="text-gray-300">
-          +92 300 0380717
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-green-400 font-semibold">Location</h3>
-        <p class="text-gray-300">
-          Lahore, Pakistan
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-green-400 font-semibold">GitHub</h3>
-        <a href="https://github.com/Abcdali/"
-           target="_blank"
-           class="text-green-400 hover:underline">
-          View GitHub Profile
-        </a>
-      </div>
-
-      <div>
-        <h3 class="text-green-400 font-semibold">LinkedIn</h3>
-        <a href="https://www.linkedin.com/in/ali-haider-6821253b0"
-           target="_blank"
-           class="text-green-400 hover:underline">
-          View LinkedIn Profile
-        </a>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
 
 
 
  
 
-</section>
-<!-- <div class="card-hidden bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
-
-      <img src="project3.jpg" class="w-full h-48 object-cover">
-
-      <div class="p-5">
-        <h3 class="text-xl font-bold">E-commerce Backend</h3>
-        <p class="text-gray-400 mt-2 text-sm">
-          Product, orders and user management system.
-        </p>
-        <a href="#" class="inline-block mt-4 text-green-400 hover:underline">
-          View Project →
-        </a>
-      </div>
-
-    </div> -->
 
 <script>
 const texts = ["Node.js", "Express.js", "Database", "REST APIs"," JWT Auth", "React.js", "AI Agents", "Generative AI", "RAG Systems", "Automation"];
@@ -540,6 +519,13 @@ let isDeleting = false;
 
 const el = document.getElementById("changingText");
 const speed = 90; // faster feel
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
 
 function typeEffect() {
   const currentText = texts[index];

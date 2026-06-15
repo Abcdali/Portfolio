@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* floating image */
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* glow pulse */
+    .glow {
+      animation: glow 2s infinite;
+    }
+
+    @keyframes glow {
+      0%,100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+ 
+.project-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.project-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* optional: left/right effect */
+.slide-left {
+  transform: translateX(-80px);
+}
+
+.slide-right {
+  transform: translateX(80px);
+}
+.project-hidden {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* LEFT → RIGHT */
+.from-left {
+  transform: translateX(-100px);
+}
+
+/* RIGHT → LEFT */
+.from-right {
+  transform: translateX(100px);
+}
+
+/* SHOW */
+.project-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+  </style>
+
+</head>
+
+<body class="bg-gray-950 text-white overflow-x-hidden">
+<nav class="fixed top-0 left-0 w-full bg-gray-950/80 backdrop-blur border-b border-gray-800 z-50">
+
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+
+    <!-- Logo -->
+    <h1 class="text-green-400 font-bold text-xl">
+      DevPortfolio
+    </h1>
+
+    <!-- Links -->
+    <ul class="hidden md:flex gap-8 text-gray-300">
+
+      <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
+      <li><a href="#projects" class="hover:text-green-400 transition">Projects</a></li>
+      <li><a href="#skills" class="hover:text-green-400 transition">Skills</a></li>
+      <li><a href="#contact" class="hover:text-green-400 transition">Contact</a></li>
+
+    </ul>
+
+    <!-- Button -->
+    <a href="#contact"
+       class="bg-green-600 px-4 py-2 rounded-lg hover:bg-green-500 transition">
+      Hire Me
+    </a>
+
+  </div>
+
+</nav>
+<!-- HERO -->
+<section class="min-h-screen flex items-center px-10 fade-in">
+
+  <div class="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+
+    <!-- LEFT -->
+    <div class="md:w-1/2 text-center md:text-left">
+
+      <h1 class="text-4xl md:text-5xl font-bold">
+        Hi, I'm <span class="text-green-400">Ali Haider</span>
+      </h1>
+
+      <h2 class="text-xl md:text-2xl mt-3 text-gray-300">
+        <b>MERN Developer</b>
+      </h2>
+
+      <p class="mt-5 text-gray-400 leading-relaxed">
+        I build scalable backend systems using
+        <span id="changingText" class="text-green-400 font-semibold"></span>.
+        <br>
+        Focused on APIs, performance, and clean architecture.
+      </p>
+
+      <!-- BUTTONS -->
+      <div class="mt-6 flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+
+        <a href="#projects"
+           class="bg-green-600 px-6 py-3 rounded-lg hover:bg-green-500 transition transform hover:scale-105">
+          View Projects
+        </a>
+
+        <a href="#contact"
+           class="border border-gray-600 px-6 py-3 rounded-lg hover:bg-gray-800 transition transform hover:scale-105">
+          Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="md:w-1/2 flex justify-center">
+
+      <div class="relative float">
+
+        <!-- glow -->
+        <div class="absolute -inset-3 bg-green-500 rounded-full blur glow"></div>
+
+        <img src="assets/images/2.jpeg"
+             class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-green-500 shadow-xl">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section id="about" class="py-20 px-10 project-hidden from-left">
+
+  <h2 class="text-3xl font-bold text-center mb-12 text-green-400">
+    About Me
+  </h2>
+
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+    <!-- LEFT TEXT -->
+    <div>
+
+      <p class="text-gray-400 leading-relaxed">
+        I am a passionate Backend Developer with a strong foundation in building scalable and secure web applications.
+        I specialize in designing RESTful APIs, managing databases, and writing clean, efficient server-side code.
+      </p>
+
+      <p class="text-gray-400 mt-4">
+        I hold a degree in Computer Science and have been actively working on backend development for the past 1 year,
+        focusing on real-world projects and performance-driven systems.
+      </p>
+
+    </div>
+
+    <!-- RIGHT STATS -->
+    <div class="grid grid-cols-2 gap-6 text-center">
+
+      <!-- DEGREE -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-xl font-bold text-green-400">Degree</h3>
+        <p class="text-gray-300 mt-2">BS Computer Science</p>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-xl font-bold text-green-400">Experience</h3>
+        <p class="text-gray-300 mt-2">1 Year</p>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-xl font-bold text-green-400">Projects</h3>
+        <p class="text-gray-300 mt-2">10+ Completed</p>
+      </div>
+ 
+      <!-- SKILLS -->
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <h3 class="text-xl font-bold text-green-400">Focus</h3>
+        <p class="text-gray-300 mt-2">Backend & APIs</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section id="projects" class="py-20 px-10">
+
+  <h2 class="text-3xl font-bold text-center mb-16 text-green-400">
+    My Projects
+  </h2>
+
+  <!-- PROJECT ITEM -->
+  <div class="project-hidden flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto mb-20">
+
+    <!-- LEFT: IMAGE CARD -->
+    <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <img src="assets/images/Auth.png" class="w-full h-64 object-cover">
+    </div>
+
+    <!-- RIGHT: DETAILS -->
+    <div class="md:w-1/2">
+
+      <h3 class="text-2xl font-bold">Auth API System</h3>
+
+      <p class="text-gray-400 mt-3">
+        A secure backend authentication system built using modern security practices.
+      </p>
+
+      <!-- FEATURES -->
+      <ul class="mt-4 text-gray-300 space-y-2">
+        <li>✔ JWT Authentication</li>
+        <li>✔ Password Hashing</li>
+        <li>✔ Protected Routes</li>
+      </ul>
+
+      <!-- TECH -->
+      <p class="mt-4 text-sm text-green-400">
+        Node.js • Express • MySQL
+      </p>
+
+      <!-- BUTTON -->
+     <a href="https://github.com/Abcdali/Web-Backend"
+   target="_blank"
+   class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+   View Project
+   </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- SECOND PROJECT (REVERSE STYLE 🔥) -->
+  <div class="project-hidden flex flex-col md:flex-row-reverse items-center gap-10 max-w-6xl mx-auto">
+
+    <!-- IMAGE -->
+    <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <img src="assets/images/task.png" class="w-full h-64 object-cover">
+    </div>
+
+    <!-- DETAILS -->
+    <div class="md:w-1/2">
+
+      <h3 class="text-2xl font-bold">SMAC APP</h3>
+
+      <p class="text-gray-400 mt-3">
+        Backend system for managing payment processing.
+      </p>
+
+      <ul class="mt-4 text-gray-300 space-y-2">
+        <li>✔ User-based payment</li>
+        <li>✔ CRUD operations</li>
+        <li>✔ Clean API design</li>
+      </ul>
+
+      <p class="mt-4 text-sm text-green-400">
+        Node.js • Express • SQL
+      </p>
+
+      <a href="https://github.com/Abcdali/smacapp"
+      target="_blank"
+       class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+        View Project
+      </a>
+
+    </div>
+
+     </div>
+     
+    <div class="project-hidden flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto mb-20">
+
+  <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+    <img src="assets/images/uni1.png" class="w-full h-64 object-cover">
+  </div>
+
+  <div class="md:w-1/2">
+
+    <h3 class="text-2xl font-bold">Uni Finder</h3>
+
+    <p class="text-gray-400 mt-3">
+      A university management platform for students and administrators with program management, hostel booking, and document handling.
+    </p>
+
+    <ul class="mt-4 text-gray-300 space-y-2">
+      <li>✔ Student Management</li>
+      <li>✔ Hostel & Room Booking</li>
+      <li>✔ Document Management</li>
+    </ul>
+
+    <p class="mt-4 text-sm text-green-400">
+      Node.js • Express • MySQL
+    </p>
+
+    <a href="https://github.com/Abcdali/uni-finder"
+       target="_blank"
+       class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+      View Project
+    </a>
+
+  </div>
+
+</div>
+<div class="project-hidden flex flex-col md:flex-row-reverse items-center gap-10 max-w-6xl mx-auto mb-20">
+
+  <div class="md:w-1/2 bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+    <img src="assets/images/pdf.png" class="w-full h-64 object-cover">
+  </div>
+
+  <div class="md:w-1/2">
+
+    <h3 class="text-2xl font-bold">PDF Chatbot</h3>
+
+    <p class="text-gray-400 mt-3">
+      AI-powered chatbot that allows users to upload PDF documents and ask questions based on the document content.
+    </p>
+
+    <ul class="mt-4 text-gray-300 space-y-2">
+      <li>✔ PDF Upload</li>
+      <li>✔ AI Question Answering</li>
+      <li>✔ Context Based Responses</li>
+    </ul>
+
+    <p class="mt-4 text-sm text-green-400">
+      Python • AI • PDF Processing
+    </p>
+
+    <a href="https://github.com/Abcdali/PDF-Chatbot"
+       target="_blank"
+       class="inline-block mt-5 bg-green-600 px-5 py-2 rounded-lg hover:bg-green-500 transition">
+      View Project
+    </a>
+
+  </div>
+  </div>
+
+  <section id="skills" class="py-20 px-10 project-hidden from-right">
+
+  <h2 class="text-3xl font-bold text-center mb-12 text-green-400">
+    Skills
+  </h2>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fab fa-node-js text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">Node.js</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-server text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">Express.js</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-database text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">MongoDB</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fab fa-react text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">React.js</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-layer-group text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">MERN Stack</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-robot text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">AI Agents</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-brain text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">Generative AI</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-book-open text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">RAG Systems</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-gears text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">Automation</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-plug text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">REST APIs</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-database text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">MySQL</h3>
+    </div>
+
+    <div class="bg-gray-900 p-6 rounded-xl text-center hover:scale-105 transition">
+      <i class="fas fa-shield-halved text-4xl text-green-400 mb-3"></i>
+      <h3 class="font-semibold">JWT Auth</h3>
+    </div>
+
+  </div>
+
+</section>
+<section id="contact" class="py-20 px-10 project-hidden from-left">
+
+  <h2 class="text-3xl font-bold text-center mb-12 text-green-400">
+    Contact Me
+  </h2>
+
+  <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-xl shadow-lg">
+
+    <p class="text-center text-gray-400 mb-8">
+      Interested in working together? Feel free to reach out.
+    </p>
+
+    <div class="space-y-6">
+
+      <div>
+        <h3 class="text-green-400 font-semibold">Email</h3>
+        <p class="text-gray-300">
+          haiderali380717@gmail.com
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-green-400 font-semibold">Phone</h3>
+        <p class="text-gray-300">
+          +92 300 0380717
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-green-400 font-semibold">Location</h3>
+        <p class="text-gray-300">
+          Lahore, Pakistan
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-green-400 font-semibold">GitHub</h3>
+        <a href="https://github.com/Abcdali/"
+           target="_blank"
+           class="text-green-400 hover:underline">
+          View GitHub Profile
+        </a>
+      </div>
+
+      <div>
+        <h3 class="text-green-400 font-semibold">LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/ali-haider-6821253b0"
+           target="_blank"
+           class="text-green-400 hover:underline">
+          View LinkedIn Profile
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+ 
+
+</section>
+<!-- <div class="card-hidden bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+
+      <img src="project3.jpg" class="w-full h-48 object-cover">
+
+      <div class="p-5">
+        <h3 class="text-xl font-bold">E-commerce Backend</h3>
+        <p class="text-gray-400 mt-2 text-sm">
+          Product, orders and user management system.
+        </p>
+        <a href="#" class="inline-block mt-4 text-green-400 hover:underline">
+          View Project →
+        </a>
+      </div>
+
+    </div> -->
+
+<script>
+const texts = ["Node.js", "Express.js", "Database", "REST APIs"," JWT Auth", "React.js", "AI Agents", "Generative AI", "RAG Systems", "Automation"];
+
+let index = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const el = document.getElementById("changingText");
+const speed = 90; // faster feel
+
+function typeEffect() {
+  const currentText = texts[index];
+
+  if (isDeleting) {
+    charIndex--;
+    el.textContent = currentText.substring(0, charIndex);
+  } else {
+    charIndex++;
+    el.textContent = currentText.substring(0, charIndex);
+  }
+
+  let delay = isDeleting ? 50 : speed;
+
+  if (!isDeleting && charIndex === currentText.length) {
+    delay = 900;
+    isDeleting = true;
+  }
+
+  else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    index = (index + 1) % texts.length;
+    delay = 250;
+  }
+
+  setTimeout(typeEffect, delay);
+}
+
+const projects = document.querySelectorAll('.project-hidden');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('project-show');
+    } else {
+      entry.target.classList.remove('project-show'); // 🔥 reset animation
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+projects.forEach(project => {
+  observer.observe(project);
+});
+
+
+
+typeEffect();
+</script>
+
+</body>
+</html>
